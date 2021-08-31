@@ -61,3 +61,5 @@ def minecraft():
     #     print(name)
 
     return render_template('index.html', title='Home', images = list_of_files)
+
+    
