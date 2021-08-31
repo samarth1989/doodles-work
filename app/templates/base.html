@@ -1,0 +1,79 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Aanhik's Legoland
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='app-icon.png') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='app-icon.png') }}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container" class="imgsize">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ref="" style="color: aliceblue;">Aanhik's         <span style="color:#FF0000">L</span>
+                <span style="color:#b3ff00">E</span>
+                <span style="color:#0011ff">G</span>
+                <span style="color:#ffe600">O</span>
+                <span style="color:#00f7ff">L</span>
+                <span style="color:#ff00c8">A</span>
+                <span style="color:#eeee7c">N</span>
+                <span style="color:#FF0000">D</span></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('index')}}" style="color: aliceblue;">Legoland</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('minecraft')}}" style="color: aliceblue;">Minecraft</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %} 
+</div>
+
+<div style="min-height: 20px;">
+
+
+</div>
+
+{% block footer %}
+
+<footer class="footer navbar-default navbar-fixed-bottom" role="contentinfo">
+    <div class="container">
+        <p>
+            Aanhik's Legoland &copy 2021 All Rights Reserved.
+        </p>
+    </div>
+</footer>
+{% endblock footer %}
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}
+

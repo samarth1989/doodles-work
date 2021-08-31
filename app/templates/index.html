@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1 style="text-align: center;">Welcome to <span style="font-weight: bold; color:#0004ff">Aanhik's</span>
+
+<span style="color:#FF0000">L</span>
+<span style="color:#b3ff00">E</span>
+<span style="color:#0011ff">G</span>
+<span style="color:#ffe600">O</span>
+<span style="color:#00f7ff">L</span>
+<span style="color:#ff00c8">A</span>
+<span style="color:#131212">N</span>
+<span style="color:#FF0000">D</span>
+        
+        !</h1>
+    <br>
+    <div>
+    <div class="leftdiv">
+        <img src="static/car-goggs.JPG" alt=""  class="imgsize">
+    </div>
+
+    <div  class="smalldiv">
+        <div class="spacediv">
+<br>
+        </div>
+        {% for i in images %}
+        {% set list1 = i.split('/') %}
+        <a href="{{ url_for('show', item=list1[2]) }}">
+        <img src={{ i }} alt="" style="height: 100px; min-width: 75px; padding-bottom: 0.5%;" class="smallimgsize">
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
